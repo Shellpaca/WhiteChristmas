@@ -2,6 +2,16 @@
 @import "reboot";
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap');
 
+
+html {
+
+}
+@media screen and (max-width:480px) {
+    html {
+        font-size: 8px;
+    }
+}
+
 body {
     font-family: 'Playfair Display', 'Libre Baskerville', 'Noto Sans JP', serif;
 }
@@ -13,24 +23,48 @@ body {
     background-position: center;
     background-size: cover;
     position: relative;
+    overflow: hidden;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: black;
+        opacity: .1;
+    }
     .headline {
         position: absolute;
         top: 46%;
         left: 50%;
         transform: translateY(-50%);
         transform: translateX(-50%);
-        font-size: 2.4rem;
+        font-size: 4rem;
         font-style: italic;
         color: #fff;
         white-space: nowrap;
         letter-spacing: 5px;
+        z-index: 5;
+    }
+    .message {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translateY(-50%);
+        transform: translateX(-50%);
+        font-size: 2.5rem;
+        font-style: italic;
+        color: #fff;
+        white-space: nowrap;
+        letter-spacing: 5px;
+        z-index: 5;
     }
     .snow {
         background-color: #fff;
         border-radius: 50%;
         position: absolute;
-        width: 10px;
-        height: 10px;
+        z-index: 5;
     }
 }
 

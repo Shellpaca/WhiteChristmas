@@ -6,22 +6,28 @@ let getSwing = () => {
     return `${plusOrMinus ? "": "-"}${swingSize}px`;
 };
 const getOpacityVal = () => {
-    const opacitySize = Math.floor(Math.random() * (10 - 7) + 7);
+    let opacitySize = Math.floor(Math.random() * (10 - 5) + 5);
+    if (opacitySize === 10) opacitySize = 1;
     return `.${opacitySize}`;
 }
 
+const getZIndex = () => {
+    const zIndexSize = Math.floor(Math.random() * (7 - 3) + 3);
+    return `.${zIndexSize}`;
+}
+
 export const fallKeyframes = [
-    { opacity: 0, left: 0, top: 0, },
-    { opacity: getOpacityVal(), left: getSwing(), },
-    { opacity: getOpacityVal(), left: getSwing(), },
-    { opacity: getOpacityVal(), left: getSwing(), },
-    { opacity: getOpacityVal(), left: getSwing(), },
-    { opacity: getOpacityVal(), left: getSwing(), },
-    { opacity: getOpacityVal(), left: getSwing(), },
-    { opacity: getOpacityVal(), left: getSwing(), },
-    { opacity: getOpacityVal(), left: getSwing(), },
-    { opacity: getOpacityVal(), left: getSwing(), },
-    { opacity: 0, left: 0,top: "100%" },
+    { opacity: 0, top: 0, },
+    { opacity: getOpacityVal(), "z-index": getZIndex(), transform: `translate(${getSwing()})`, },
+    { opacity: getOpacityVal(), "z-index": getZIndex(), transform: `translate(${getSwing()})`, },
+    { opacity: getOpacityVal(), "z-index": getZIndex(), transform: `translate(${getSwing()})`, },
+    { opacity: getOpacityVal(), "z-index": getZIndex(), transform: `translate(${getSwing()})`, },
+    { opacity: getOpacityVal(), "z-index": getZIndex(), transform: `translate(${getSwing()})`, },
+    { opacity: getOpacityVal(), "z-index": getZIndex(), transform: `translate(${getSwing()})`, },
+    { opacity: getOpacityVal(), "z-index": getZIndex(), transform: `translate(${getSwing()})`, },
+    { opacity: getOpacityVal(), "z-index": getZIndex(), transform: `translate(${getSwing()})`, },
+    { opacity: getOpacityVal(), "z-index": getZIndex(), transform: `translate(${getSwing()})`, },
+    { opacity: 0,top: "100vh" },
 ]
 export const option = {
     duration: 10000,

@@ -337,6 +337,11 @@ template {
 [hidden] {
   display: none !important;
 }
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 8px;
+  }
+}
 body {
   font-family: "Playfair Display", "Libre Baskerville", "Noto Sans JP", serif;
 }
@@ -348,6 +353,17 @@ body {
   background-position: center;
   background-size: cover;
   position: relative;
+  overflow: hidden;
+}
+.snow-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.1;
 }
 .snow-wrapper .headline {
   position: absolute;
@@ -355,17 +371,30 @@ body {
   left: 50%;
   transform: translateY(-50%);
   transform: translateX(-50%);
-  font-size: 2.4rem;
+  font-size: 4rem;
   font-style: italic;
   color: #fff;
   white-space: nowrap;
   letter-spacing: 5px;
+  z-index: 5;
+}
+.snow-wrapper .message {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  font-style: italic;
+  color: #fff;
+  white-space: nowrap;
+  letter-spacing: 5px;
+  z-index: 5;
 }
 .snow-wrapper .snow {
   background-color: #fff;
   border-radius: 50%;
   position: absolute;
-  width: 10px;
-  height: 10px;
+  z-index: 5;
 }
 /*# sourceMappingURL=main.css.map */
